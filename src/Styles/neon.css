@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+:root {
+  --neon-cyan: #00ffff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #8a2be2;
+  --neon-orange: #ff6600;
+  --neon-green: #00ff00;
+  --neon-blue: #0066ff;
+  --dark-navy: #0f0f23;
+  --darker-blue: #16213e;
+  --dark-blue: #0a0a2e;
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--dark-blue) 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f0f23 0%, #0a0a2e 100%);
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+}
+
+.neon-text {
+  color: var(--neon-cyan);
+  text-shadow: 
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 15px var(--neon-cyan),
+    0 0 20px var(--neon-cyan);
+  animation: neonFlicker 2s infinite alternate;
+}
+
+.neon-text-pink {
+  color: var(--neon-pink);
+  text-shadow: 
+    0 0 5px var(--neon-pink),
+    0 0 10px var(--neon-pink),
+    0 0 15px var(--neon-pink),
+    0 0 20px var(--neon-pink);
+}
+
+.neon-border {
+  border: 2px solid var(--neon-cyan);
+  border-radius: 8px;
+  box-shadow: 
+    0 0 10px var(--neon-cyan),
+    inset 0 0 10px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+  border-color: var(--neon-pink);
+  box-shadow: 
+    0 0 20px var(--neon-pink),
+    inset 0 0 20px rgba(255, 0, 255, 0.1);
+}
+
+.neon-button {
+  background: transparent;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.neon-button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 
+    0 0 25px var(--neon-cyan),
+    inset 0 0 25px rgba(0, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.neon-button-pink {
+  border-color: var(--neon-pink);
+  color: var(--neon-pink);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.neon-button-pink:hover {
+  background: rgba(255, 0, 255, 0.1);
+  box-shadow: 
+    0 0 25px var(--neon-pink),
+    inset 0 0 25px rgba(255, 0, 255, 0.1);
+}
+
+.race-track {
+  background: linear-gradient(90deg, 
+    var(--darker-blue) 0%,
+    var(--dark-blue) 50%,
+    var(--darker-blue) 100%
+  );
+  border: 2px solid var(--neon-cyan);
+  border-radius: 8px;
+  position: relative;
+  min-height: 80px;
+  margin: 16px 0;
+  overflow: hidden;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.2),
+    inset 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+.race-track::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--neon-orange) 0px,
+    var(--neon-orange) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  animation: moveTrack 2s linear infinite;
+}
+
+.race-car {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 24px;
+  transition: left 0.1s linear;
+  filter: drop-shadow(0 0 8px var(--neon-cyan));
+  z-index: 2;
+}
+
+.race-car.racing {
+  animation: carGlow 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonFlicker {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px var(--neon-cyan),
+      0 0 15px var(--neon-cyan),
+      0 0 20px var(--neon-cyan);
+  }
+  50% {
+    text-shadow: 
+      0 0 2px var(--neon-cyan),
+      0 0 5px var(--neon-cyan),
+      0 0 8px var(--neon-cyan),
+      0 0 12px var(--neon-cyan);
+  }
+}
+
+@keyframes moveTrack {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+
+@keyframes carGlow {
+  0% {
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+    transform: translateY(-50%) scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px var(--neon-pink));
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+@keyframes raceProgress {
+  0% { left: 0%; }
+  100% { left: calc(100% - 40px); }
+}
+
+.winner-banner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  border: 3px solid var(--neon-pink);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 
+    0 0 30px var(--neon-pink),
+    inset 0 0 30px rgba(255, 0, 255, 0.1);
+  animation: bannerAppear 0.5s ease-out;
+}
+
+@keyframes bannerAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.neon-spinner {
+  border: 3px solid transparent;
+  border-top: 3px solid var(--neon-cyan);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.neon-pagination .MuiPaginationItem-root {
+  color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  transition: all 0.3s ease;
+}
+
+.neon-pagination .MuiPaginationItem-root:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.neon-pagination .Mui-selected {
+  background-color: rgba(255, 0, 255, 0.2) !important;
+  color: var(--neon-pink) !important;
+  border-color: var(--neon-pink) !important;
+  box-shadow: 0 0 15px var(--neon-pink);
+}
+
+@media (max-width: 768px) {
+  .race-track {
+    min-height: 60px;
+  }
+  
+  .race-car {
+    font-size: 18px;
+  }
+  
+  .winner-banner {
+    margin: 0 16px;
+    padding: 24px;
+  }
+  
+  .neon-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .race-track {
+    min-height: 50px;
+  }
+  
+  .race-car {
+    font-size: 16px;
+  }
+  
+  .neon-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
