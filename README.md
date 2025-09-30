@@ -1,5 +1,10 @@
 # Garage App
 
+## 🚀 Links
+- **Repository (code):** [Async Race Repo](https://github.com/Shushanik01/Async-race-project)
+- **Live Demo:** [Async Race Demo](https://shushanik01.github.io/garage)
+
+
 ## Project Score: 380 / 400  
 
 
