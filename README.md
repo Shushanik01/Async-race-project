@@ -1,10 +1,12 @@
 # Garage App
 
+## 🚀 Links
+- **Repository (code):** [Async Race Repo](https://github.com/Shushanik01/Async-race-project)
+- **Live Demo:** [Async Race Demo](https://shushanik01.github.io/garage)
+
+
 ## Project Score: 380 / 400  
 
-
-## Live Demo  
-Project is deployed in my GitHub account: https://github.com/Shushanik01/Async-race-project.git 
 
 ---
 
@@ -55,12 +57,7 @@ Project is deployed in my GitHub account: https://github.com/Shushanik01/Async-r
 
 ---
 
-# 🏎️ Async Race - Cyberpunk Edition
-
-**Score: ___/400 pts**  
-**Live Demo: [Deploy your app and add link here]**
-
-A futuristic racing simulation game built with React 19, TypeScript, Redux Toolkit, React Router, Framer Motion and Material-UI, featuring real-time car racing with API-driven mechanics and cyberpunk aesthetics.
+A futuristic racing simulation game built with React 19, TypeScript, Redux Toolkit, React Router and Material-UI, featuring real-time car racing with API-driven mechanics and cyberpunk aesthetics.
 
 ## Features
 
@@ -256,7 +253,6 @@ NODE_ENV=production
 ##  Acknowledgments
 
 - Material-UI for excellent components
-- Framer Motion for smooth animations
 - Create React App for build tooling
 - JSON Server for rapid API prototyping
 - EPAM for backend server and opportunity
