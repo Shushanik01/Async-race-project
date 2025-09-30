@@ -18,23 +18,26 @@ export const getRandomCarColor = (): string => {
 export const getCarEmoji = (carName: string = ''): string => {
   const name = carName.toLowerCase();
   
-  if (name.includes('tesla')) return '/images/car3.webp';
-  if (name.includes('bmw')) return '/images/car2.webp';
-  if (name.includes('mercedes')) return '/images/car3.webp';
-  if (name.includes('ford')) return '/images/car4.webp';
-  if (name.includes('lamborghini')) return '/images/car5.png';
-  if (name.includes('ferrari')) return '/images/car2.webp';
-  if (name.includes('porsche')) return '/images/car1.webp';
-  if (name.includes('mclaren')) return 'images/car5.png';
-  if (name.includes('bugatti')) return '/images/car3.webp';
-  if (name.includes('aston martin')) return '/images/car2.webp';
-  if (name.includes('nissan')) return '/images/car1.webp';
-  if (name.includes('toyota')) return '/images/car2.webp';
-  if (name.includes('chevrolet')) return 'images/car5.png';
-  if (name.includes('dodge')) return '/images/car4.webp';
-  if (name.includes('audi')) return 'images/car5.png';
+  
+   const basePath = '/Async-race-project';
+  
+  if (name.includes('tesla')) return `${basePath}/images/car3.webp`;
+  if (name.includes('bmw')) return `${basePath}/images/car2.webp`;
+  if (name.includes('mercedes')) return `${basePath}/images/car3.webp`;
+  if (name.includes('ford')) return `${basePath}/images/car4.webp`;
+  if (name.includes('lamborghini')) return `${basePath}/images/car5.png`;
+  if (name.includes('ferrari')) return `${basePath}/images/car2.webp`;
+  if (name.includes('porsche')) return `${basePath}/images/car1.webp`;
+  if (name.includes('mclaren')) return `${basePath}/images/car5.png`;
+  if (name.includes('bugatti')) return `${basePath}/images/car3.webp`;
+  if (name.includes('aston martin')) return `${basePath}/images/car2.webp`;
+  if (name.includes('nissan')) return `${basePath}/images/car1.webp`;
+  if (name.includes('toyota')) return `${basePath}/images/car2.webp`;
+  if (name.includes('chevrolet')) return `${basePath}/images/car5.png`;
+  if (name.includes('dodge')) return `${basePath}/images/car4.webp`;
+  if (name.includes('audi')) return `${basePath}/images/car5.png`;
  
-  return '/images/car1.webp';
+  return `${basePath}/images/car1.webp`;
 };
 
 export const generateRandomCarData = (): CarData => {

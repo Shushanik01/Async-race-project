@@ -1,3 +1,4 @@
+
 import { configureStore } from '@reduxjs/toolkit';
 import garageReducer from './garageSlice.ts';
 import winnersReducer from './winnersSlice.ts';

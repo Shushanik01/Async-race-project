@@ -4,7 +4,7 @@
 
 
 ## Live Demo  
-[Click here to see deployed app]()
+Project is deployed in my GitHub account: https://github.com/Shushanik01/Async-race-project.git 
 
 ---
 
